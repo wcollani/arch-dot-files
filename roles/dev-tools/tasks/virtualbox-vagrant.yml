@@ -19,5 +19,5 @@
 - name: Add vagrant templte
   copy: src=Vagrantfile.template dest=~/.dotfiles/ mode=0644
 
-- name: Add vagrant templte
+- name: Add vagrant dotfile 
   copy: src=vagrant.dotfile dest=~/.dotfiles/ mode=0644
