@@ -1,15 +1,14 @@
 ---
-
-- include: virtualbox-vagrant.yml
-  when: ansible_os_family == 'Darwin' or ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
-
 - include: osx-apps.yml
   when: ansible_os_family == 'Darwin'
 
+- include: virtualbox-vagrant.yml
 - include: docker.yml
 - include: atom.yml
 # - include: scala.yml
 - include: python.yml
+- include: git-prompt.yml
+
 
 - name: Arch | Install applications
   pacman: name={{ item }} state=latest update_cache=yes

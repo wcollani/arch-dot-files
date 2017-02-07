@@ -1,0 +1,9 @@
+- name: Clone bash-git-prompt repo
+  git: 
+    repo: https://github.com/magicmonty/bash-git-prompt.git 
+    dest: ~/.bash-git-prompt 
+    depth: 1
+    clone: yes
+
+- name: Add git-prompt dotfile
+  copy: src=gitprompt.dotfile dest=~/.dotfiles/ mode=0644
