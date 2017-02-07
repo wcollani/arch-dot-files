@@ -1,3 +1,3 @@
 #dotfiles
 
-This repo contains my provisioning scripts.
+This repo contains scripts for setting up workstation
