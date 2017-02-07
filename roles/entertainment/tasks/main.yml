@@ -6,9 +6,10 @@
     - steam
   when: ansible_os_family == 'Darwin'
 
-- name: Arch | Install applications
-  pacman: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - steam-manjaro
-  become: true
-  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+  # need to figure out how to install from AUR
+  #- name: Arch | Install applications
+  #  pacman: name={{ item }} state=latest update_cache=yes
+  #  with_items:
+  #    - steam-manjaro
+  #  become: true
+  #  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'

@@ -8,6 +8,12 @@
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
   lineinfile: dest=~/.bashrc create=yes line='for file in ~/.dotfiles/*.dotfile; do if [ -f "$file" ]; then . $file; fi; done'
 
+- name: Ensure ~/.ssh folder exists
+  file: 
+      path: ~/.ssh
+      mode: 0700
+      state: directory
+
 - name: Copy ssh config
   copy: src=config.ssh dest=~/.ssh/config mode=0600
   
