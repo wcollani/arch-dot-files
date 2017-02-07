@@ -1,0 +1,23 @@
+---
+
+- name: OSX | Install virtualbox
+  homebrew_cask: name=virtualbox state=present
+  when: ansible_os_family == 'Darwin'
+    
+- name: OSX | Install vagrant
+  homebrew_cask: name=vagrant state=present
+  when: ansible_os_family == 'Darwin'
+
+- name: Arch | Install applications
+  pacman: name={{ item }} state=latest update_cache=yes
+  with_items:
+    - virtualbox
+    - vagrant
+  become: true
+  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+- name: Add vagrant templte
+  copy: src=Vagrantfile.template dest=~/.dotfiles/ mode=0644
+
+- name: Add vagrant templte
+  copy: src=vagrant.dotfile dest=~/.dotfiles/ mode=0644

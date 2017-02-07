@@ -19,5 +19,5 @@ run-arch:
 	ansible-playbook -i inventory -e ansible_python_interpreter=`which python2` main.yml
 arch-container:
 	echo "Creating arch linux container"
-	docker build -t buildingbananas/arch .
-	docker run --rm -it buildingbananas/arch
+	docker build -t wcollani/arch .
+	docker run --rm -it wcollani/arch

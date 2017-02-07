@@ -1,6 +1,6 @@
 [user]
-  name  = Will Weaver
-  email = monkey@buildingbananas.com
+  name  = Will Collani
+  email = wcollani@gmail.com 
 [core]
 	editor = vim
 [web]
@@ -10,4 +10,4 @@
 [color]
 	ui = auto
 [github]
-	user = funkymonkeymonk
+	user = wcollani

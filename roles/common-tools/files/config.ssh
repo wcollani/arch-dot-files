@@ -1,0 +1,11 @@
+host bigsexy
+    User root
+    Port 22
+
+host wcollani.asuscomm.com
+    User root
+    Port 55022
+
+host blackice
+    User wcollani
+    Port 22

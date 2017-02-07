@@ -1,7 +1,9 @@
 alias cls='clear;ls'
-alias ..='cd ..'
-alias ll='ls -la'
+alias ll='ls -lh'
 alias lrat='ls -lrat'
+alias df='df -h'                          
+alias vi='/usr/bin/vim'
+
 
 disk-usage() {
   path=${1-${PWD}}

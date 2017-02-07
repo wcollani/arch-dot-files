@@ -1,13 +1,23 @@
 ---
 
-- include: virtualbox.yml
-  when: ansible_os_family == 'Darwin'
+- include: virtualbox-vagrant.yml
+  when: ansible_os_family == 'Darwin' or ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
 - include: osx-apps.yml
   when: ansible_os_family == 'Darwin'
 
 - include: docker.yml
 - include: atom.yml
 # - include: scala.yml
+- include: python.yml
+
+- name: Arch | Install applications
+  pacman: name={{ item }} state=latest update_cache=yes
+  with_items:
+    - git
+    - vim
+  become: true
+  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
-  lineinfile: dest=~/.bash_profile create=yes line='for file in ~/.dotfiles/*; do if [ -f "$file" ]; then . $file; fi; done'
+  lineinfile: dest=~/.bashrc create=yes line='for file in ~/.dotfiles/*.dotfile; do if [ -f "$file" ]; then . $file; fi; done'

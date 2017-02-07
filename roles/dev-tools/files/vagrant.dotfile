@@ -1,0 +1,19 @@
+vagrant-init () {
+	if [ "$#" -ne 2 ]; then
+		echo "Illegal number of parameters"
+		echo "Usage $0 'vagrant box name' 'Last octet of 192.168.33.XXX'"
+		return 1
+	fi	
+
+	NAME=$1
+	LAST_OCTET=$2
+	
+	if [ -d "$NAME" ]; then
+		echo "Directory already exists"
+		return 1
+	fi
+	mkdir ./$NAME
+	
+	sed "s|VAGRANT-BOX\" => \"192.168.33.XXX|$NAME\" => \"192.168.33.$LAST_OCTET|" ~/.dotfiles/Vagrantfile.template > ./$NAME/Vagrantfile
+
+}

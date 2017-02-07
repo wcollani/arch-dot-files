@@ -25,6 +25,7 @@
     - hub
     - terminator
     - xclip
+    - google-chrome
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 
