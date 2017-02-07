@@ -1,3 +1,7 @@
+alias vd='vagrant destroy -f'	
+alias vu='vagrant up'
+alias vr='vd && vu'
+
 vagrant-init () {
 	if [ "$#" -ne 2 ]; then
 		echo "Illegal number of parameters"
