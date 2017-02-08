@@ -22,5 +22,5 @@ arch-cont-build:
 	docker build --rm=false -t wcollani/arch .
 
 arch-cont-run:
-	echo "Test arch container
+	echo "Test arch container"
 	docker run --rm=false -it wcollani/arch
