@@ -2,14 +2,6 @@
 - include: osx-apps.yml
   when: ansible_os_family == 'Darwin'
 
-- include: virtualbox-vagrant.yml
-- include: docker.yml
-- include: atom.yml
-# - include: scala.yml
-- include: python.yml
-- include: git-prompt.yml
-
-
 - name: Arch | Install applications
   pacman: name={{ item }} state=latest update_cache=yes
   with_items:
@@ -17,6 +9,14 @@
     - vim
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+- include: atom.yml
+# - include: scala.yml
+- include: python.yml
+- include: git-prompt.yml
+- include: docker.yml
+- include: virtualbox-vagrant.yml
+  #- include: kubernetes.yml
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
   lineinfile: dest=~/.bashrc create=yes line='for file in ~/.dotfiles/*.dotfile; do if [ -f "$file" ]; then . $file; fi; done'

@@ -1,0 +1,13 @@
+#Need to figure out how to install from AUR
+#- name: Arch | Install applications
+#  pacman: name={{ item }} state=latest update_cache=yes
+#  with_items:
+#    - kubectl-bin
+#  become: true
+#  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+- name: Add kubernetes service template
+  copy: src=kubernetes.template dest=~/.dotfiles/ mode=0644
+
+- name: Add kubernetes dotfile
+  copy: src=kubernetes.dotfile dest=~/.dotfiles/ mode=0644
