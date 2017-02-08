@@ -11,7 +11,11 @@ dependencies:
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
 
   override:
-    - make arch-container
+    - make arch-cont-build
 
   post:
     - mkdir -p ~/docker; docker save wcollani/arch > ~/docker/image.tar
+
+test:
+  override:
+    - make arch-cont-run

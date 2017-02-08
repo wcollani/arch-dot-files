@@ -17,7 +17,10 @@ run-arch:
 	sudo true
 	echo "Running ansible playbook"
 	ansible-playbook -i inventory -e ansible_python_interpreter=`which python2` main.yml
-arch-container:
-	echo "Creating arch linux container"
+arch-cont-build:
+	echo "Build arch linux container"
 	docker build --rm=false -t wcollani/arch .
+
+arch-cont-run:
+	echo "Test arch container
 	docker run --rm=false -it wcollani/arch
