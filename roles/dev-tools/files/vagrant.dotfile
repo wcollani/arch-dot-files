@@ -1,6 +1,7 @@
 alias vd='vagrant destroy -f'	
 alias vu='vagrant up'
 alias vr='vd && vu'
+alias vs='vagrant status'
 
 vagrant-init () {
 	if [ "$#" -ne 2 ]; then
