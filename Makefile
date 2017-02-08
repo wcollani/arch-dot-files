@@ -20,4 +20,4 @@ run-arch:
 arch-container:
 	echo "Creating arch linux container"
 	docker build --rm=false -t wcollani/arch .
-	docker run --rm -it wcollani/arch
+	docker run --rm=false -it wcollani/arch
