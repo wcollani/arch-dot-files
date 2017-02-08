@@ -3,7 +3,7 @@ machine:
   services:
     - docker
 
-test:
+dependencies:
   cache_directories:
     - "~/docker"
 
