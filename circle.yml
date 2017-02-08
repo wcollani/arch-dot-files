@@ -15,4 +15,4 @@ test:
     - make arch-container
 
   post:
-    - mkdir -p ~/docker; docker save circleci/elasticsearch > ~/docker/image.tar
+    - mkdir -p ~/docker; docker save wcollani/arch > ~/docker/image.tar
