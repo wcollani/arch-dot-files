@@ -3,14 +3,13 @@ machine:
   services:
     - docker
 
-dependencies:
+test:
   cache_directories:
     - "~/docker"
 
-  override:
+  pre: 
     - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
 
-test:
   override:
     - make arch-container
 
