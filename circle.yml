@@ -3,6 +3,16 @@ machine:
   services:
     - docker
 
+dependencies:
+  cache_directories:
+    - "~/docker"
+
+  override:
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+
 test:
   override:
     - make arch-container
+
+  post:
+    - mkdir -p ~/docker; docker save circleci/elasticsearch > ~/docker/image.tar
