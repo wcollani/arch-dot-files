@@ -4,6 +4,8 @@ alias lrat='ls -lrat'
 alias df='df -h'                          
 alias vi='/usr/bin/vim'
 
+export VISUAL="vim"
+
 
 disk-usage() {
   path=${1-${PWD}}
