@@ -7,6 +7,8 @@
   with_items:
     - git
     - vim
+    - jq
+    - httpie
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 

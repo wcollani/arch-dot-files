@@ -25,6 +25,7 @@
     - hub
     - screen
     - terminator
+    - wget
     - xclip
       #- google-chrome #Need to find method for AUR install
   become: true

@@ -3,5 +3,12 @@
   with_items:
     - python-pip
     - python2-pip
+    #need to figure out aur
+    #- pyenv
+    #- pyenv-virtualenv
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+- name: Add python dotfile 
+  copy: src=python.dotfile dest=~/.dotfiles/ mode=0644
+
