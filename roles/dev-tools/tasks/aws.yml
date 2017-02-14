@@ -1,5 +1,5 @@
 - name: Arch | Install applications
-  pacman: name={{ item }} state=latest update_cache=yes
+  pacman: name={{ item }} state=latest update_cache=no
   with_items:
     - aws-cli 
 

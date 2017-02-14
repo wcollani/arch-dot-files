@@ -19,8 +19,8 @@
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 
-- name: Start docker daemon
-  service: name=docker state=started enabled=yes
+  #- name: Start docker daemon
+  #service: name=docker state=started enabled=yes
 
 - name: Add wcollani to docker group (don't need sudo for docker cmds)
   user: name=wcollani groups=docker append=yes
