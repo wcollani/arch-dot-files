@@ -5,7 +5,8 @@ alias df='df -h'
 alias vi='/usr/bin/vim'
 
 export VISUAL="vim"
-
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 disk-usage() {
   path=${1-${PWD}}
