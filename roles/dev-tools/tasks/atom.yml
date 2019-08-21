@@ -38,5 +38,4 @@
     - minimap
     - minimap-git-diff
     - script
-    -
   when: atom_is_installed.rc == 0

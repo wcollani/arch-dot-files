@@ -15,7 +15,6 @@
 - include: atom.yml
 - include: python.yml
 - include: git-prompt.yml
-- include: docker.yml
 # - include: virtualbox-vagrant.yml
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
