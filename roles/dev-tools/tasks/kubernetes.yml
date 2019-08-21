@@ -1,0 +1,7 @@
+- name: Arch | Install k8s applications
+  pacman:
+    name:
+      - kubectl
+    state: latest
+    update_cache: yes
+  become: true

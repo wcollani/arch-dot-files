@@ -18,6 +18,7 @@
 - include: gcloud.yml
 - include: aws.yml
 - include: azure.yml
+- include: kubernetes.yml
 # - include: virtualbox-vagrant.yml
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile
