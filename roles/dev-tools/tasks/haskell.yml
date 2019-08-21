@@ -1,0 +1,10 @@
+- name: Arch | Install haskell applications
+  pacman:
+    name:
+      - stack
+    state: latest
+    update_cache: yes
+  become: true
+
+- name: Add haskell dotfile
+  copy: src=haskell.dotfile dest=~/.dotfiles/ mode=0644

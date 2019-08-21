@@ -13,6 +13,7 @@
 
 # - include: atom.yml
 - include: python.yml
+- include: haskell.yml
 - include: git-prompt.yml
 - include: gcloud.yml
 - include: aws.yml
