@@ -1,14 +1,13 @@
 ---
-- include: osx-apps.yml
-  when: ansible_os_family == 'Darwin'
-
 - name: Arch | Install applications
-  pacman: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - git
-    - vim
-    - jq
-    - httpie
+  pacman:
+    name:
+      - git
+      - vim
+      - jq
+      - httpie
+    state: latest
+    update_cache: yes
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 

@@ -1,12 +1,21 @@
 ---
 - name: Arch | Install applications
-  pacman: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - hub
-    - screen
-    - terminator
-    - wget
-    - xclip
-      #- google-chrome #Need to find method for AUR install
+  pacman:
+    name:
+      - hub
+      - screen
+      - terminator
+      - wget
+      - xclip
+    state: latest
+    update_cache: yes
   become: true
+  when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+- name: Arch | Install AUR applications
+  yay:
+    name:
+      - google-chrome
+    state: latest
+    update_cache: yes
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'

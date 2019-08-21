@@ -1,13 +1,22 @@
 - name: Arch | Install applications
-  pacman: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - python-pip
-    - python2-pip
-    #need to figure out aur
-    #- pipenv
-    #- pycharm
+  pacman:
+    name:
+      - python-pip
+      - python2-pip
+      - pycharm-community-edition
+      - python-pipenv
+    state: latest
+    update_cache: yes
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
+
+# - name: Arch | Install AUR applications
+#   yay:
+#     name:
+#       - 
+#     state: latest
+#     update_cache: yes
+#   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 
 - name: Add python dotfile
   copy: src=python.dotfile dest=~/.dotfiles/ mode=0644
