@@ -1,14 +1,5 @@
 ---
-
-- name: OSX | Install virtualbox
-  homebrew_cask: name=virtualbox state=present
-  when: ansible_os_family == 'Darwin'
-
-- name: OSX | Install vagrant
-  homebrew_cask: name=vagrant state=present
-  when: ansible_os_family == 'Darwin'
-
-- name: Arch | Install applications
+- name: Arch | Install vagrant applications
   pacman:
     name:
       - virtualbox

@@ -1,0 +1,10 @@
+- name: Arch | Install aws applications
+  pacman:
+    name:
+      - aws-cli
+    state: latest
+    update_cache: yes
+  become: true
+
+- name: Add aws dotfile
+  copy: src=aws.dotfile dest=~/.dotfiles/ mode=0644

@@ -1,7 +1,9 @@
-- name: Arch | Install applications
-  pacman:
+- name: Arch | Install gcloud AUR applications
+  yay:
     name:
       - google-cloud-sdk
+    state: latest
+    update_cache: yes
 
 - name: Add gcloud dotfile
   copy: src=gcloud.dotfile dest=~/.dotfiles/ mode=0644

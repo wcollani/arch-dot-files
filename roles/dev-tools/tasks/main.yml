@@ -1,5 +1,5 @@
 ---
-- name: Arch | Install applications
+- name: Arch | Install dev-tools applications
   pacman:
     name:
       - git
@@ -11,9 +11,12 @@
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
 
-- include: atom.yml
+# - include: atom.yml
 - include: python.yml
 - include: git-prompt.yml
+- include: gcloud.yml
+- include: aws.yml
+- include: azure.yml
 # - include: virtualbox-vagrant.yml
 
 - name: Ensure everything in ~/.dotfiles/ is sourced in ~/.bash_profile

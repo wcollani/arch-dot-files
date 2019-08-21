@@ -1,0 +1,9 @@
+- name: Arch | Install azure applications
+  yay:
+    name:
+      - python-azure-cli
+    state: latest
+    update_cache: yes
+
+- name: Add azure dotfile
+  copy: src=azure.dotfile dest=~/.dotfiles/ mode=0644

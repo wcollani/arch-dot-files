@@ -1,4 +1,4 @@
-- name: Arch | Install applications
+- name: Arch | Install python applications
   pacman:
     name:
       - python-pip
@@ -13,7 +13,7 @@
 # - name: Arch | Install AUR applications
 #   yay:
 #     name:
-#       - 
+#       -
 #     state: latest
 #     update_cache: yes
 #   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
