@@ -22,13 +22,21 @@
   with_items:
     - ansible-snippets
     - auto-indent
+    - busy-signal
     - git-plus
+    - intentions
     - language-docker
     - language-terraform
+    - language-ansible
     - linter
+    - linter-ansible-syntax
+    - linter-js-yaml
+    - linter-ui-default
+    - linter-shellcheck
+    - markdown-pdf
     - markdown-writer
     - minimap
     - minimap-git-diff
     - script
-    - travis-ci-status
+    -
   when: atom_is_installed.rc == 0

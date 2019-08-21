@@ -1,24 +1,4 @@
 ---
-- name: OSX | Install homebrew applications
-  homebrew: name={{ item }} state=present
-  with_items:
-    - archey
-    - hub
-  when: ansible_os_family == 'Darwin'
-
-- name: OSX | Install homebrew cask applications
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - alfred
-    - caffeine
-    - flycut
-    - flux
-    - google-chrome
-    - iterm2
-    - seil
-    - slack
-  when: ansible_os_family == 'Darwin'
-
 - name: Arch | Install applications
   pacman: name={{ item }} state=latest update_cache=yes
   with_items:
@@ -30,14 +10,3 @@
       #- google-chrome #Need to find method for AUR install
   become: true
   when: ansible_os_family == 'Archlinux' or ansible_os_family == 'Manjaro Linux'
-
-- name: Add archey configuration
-  copy: src=archey-logo dest=~/.config/ mode=0644
-  when: ansible_os_family == 'Darwin'
-
-- name: Add hub dotfile
-  copy: src=hub.dotfile dest=~/.dotfiles/ mode=0644
-
-- name: Add archey dotfile
-  copy: src=archey.dotfile dest=~/.dotfiles/ mode=0644
-  when: ansible_os_family == 'Darwin'

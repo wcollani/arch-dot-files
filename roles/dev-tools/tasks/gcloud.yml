@@ -1,0 +1,9 @@
+# Another case of AUR
+#- name: Arch | Install applications
+#  pacman: name={{ item }} state=latest update_cache=yes
+#  with_items:
+#    - google-cloud-sdk
+
+- name: Add gcloud dotfile 
+  copy: src=gcloud.dotfile dest=~/.dotfiles/ mode=0644
+
