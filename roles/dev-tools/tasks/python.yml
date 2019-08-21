@@ -5,6 +5,7 @@
       - python2-pip
       - pycharm-community-edition
       - python-pipenv
+      - pyenv
     state: latest
     update_cache: yes
   become: true
