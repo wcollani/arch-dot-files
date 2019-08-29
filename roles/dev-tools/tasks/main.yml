@@ -6,6 +6,7 @@
       - vim
       - jq
       - httpie
+      - bind-tools
     state: latest
     update_cache: yes
   become: true
